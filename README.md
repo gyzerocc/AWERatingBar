@@ -7,7 +7,7 @@ an iOS RatingBar
 
 ## Requirements
 
-`AWERatingBar` works on Xcode 7.3 , iOS 7+  and requires ARC to build. 
+`AWERatingBar` works on Xcode 7.3 , iOS 8.0+  and requires ARC to build. 
 You will need the latest developer tools in order to build `AWERatingBar`. Old Xcode versions might work, but compatibility will not be explicitly maintained.
 
 ## CocoaPods
