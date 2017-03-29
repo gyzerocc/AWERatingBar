@@ -17,7 +17,7 @@ CocoaPods is the recommended way to add `AWERatingBar` to your project.
 Add a pod entry for JHUD to your Podfile.
 
 ```
-pod 'AWERatingBar'
+pod 'AWERatingBar', '~> 0.0.2'
 ```
 Second, install JHUD into your project:
 
@@ -54,7 +54,7 @@ Include JHUD wherever you need it with `#import "AWERatingBar.h"`.
 
 ## Contacts
 
-#### If you wish to contact me, email at: 184453324@qq.com
+#### If you wish to contact me, email at: 17086448791@163.com
 
 ## License
 
