@@ -11,6 +11,10 @@
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *label1;
+@property (weak, nonatomic) IBOutlet UILabel *label2;
+@property (weak, nonatomic) IBOutlet UILabel *label3;
+
 @end
 
 @implementation ViewController
@@ -18,10 +22,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    __weak typeof(self) weakself = self;
     AWERatingBar *ratingBar = [[AWERatingBar alloc] initWithFrame:CGRectMake(8, 72, 150, 30) numberOfStars:5 rateStyle:WholeStar isAnination:YES finish:^(CGFloat currentScore) {
-        NSLog(@"current score: %lf", currentScore);
+        weakself.label1.text = [NSString stringWithFormat:@"No.1 star score: %lf", currentScore];
     }];
     [self.view addSubview:ratingBar];
+    
+    AWERatingBar *ratingBar1 = [[AWERatingBar alloc] initWithFrame:CGRectMake(8, 112, 150, 30) numberOfStars:5 rateStyle:HalfStar isAnination:YES finish:^(CGFloat currentScore) {
+        weakself.label2.text = [NSString stringWithFormat:@"No.2 star score: %lf", currentScore];
+    }];
+    [self.view addSubview:ratingBar1];
+    
+    AWERatingBar *ratingBar2 = [[AWERatingBar alloc] initWithFrame:CGRectMake(8, 152, 150, 30) numberOfStars:5 rateStyle:IncompleteStar isAnination:YES finish:^(CGFloat currentScore) {
+        weakself.label3.text = [NSString stringWithFormat:@"No.3 star score: %lf", currentScore];
+    }];
+    [self.view addSubview:ratingBar2];
 }
 
 
