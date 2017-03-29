@@ -58,5 +58,5 @@ Include JHUD wherever you need it with `#import "AWERatingBar.h"`.
 
 ## License
 
-JHUD is released under the [MIT license](LICENSE). See LICENSE for details.
+`AWERatingBar` is released under the [MIT license](LICENSE). See LICENSE for details.
 
