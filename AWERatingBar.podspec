@@ -80,7 +80,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/gyzerocc/AWERatingBar.git", :tag => s.version }
+  s.source       = { :git => "https://github.com/gyzerocc/AWERatingBar.git", :tag => "#{ s.version }" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -106,7 +106,7 @@ Pod::Spec.new do |s|
   #
 
   # s.resource  = "icon.png"
-  # s.resources = "Resources/*.png"
+  s.resources = "AWERatingBarDemo/AWERatingBarDemo/Assets.xcassets/**/*.png"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
