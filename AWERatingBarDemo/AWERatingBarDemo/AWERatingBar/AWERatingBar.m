@@ -33,7 +33,7 @@ typedef void(^completeBlock)(CGFloat currentScore);
 }
 
 #pragma mark - 代理方式
--(instancetype)initWithCoder:(NSCoder *)aDecoder{
+- (instancetype)initWithCoder:(NSCoder *)aDecoder{
     if (self = [super initWithCoder:aDecoder]) {
         _numberOfStars = 5;
         _rateStyle = WholeStar;
@@ -42,7 +42,7 @@ typedef void(^completeBlock)(CGFloat currentScore);
     return self;
 }
 
--(instancetype)initWithFrame:(CGRect)frame{
+- (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         _numberOfStars = 5;
         _rateStyle = WholeStar;
@@ -51,7 +51,7 @@ typedef void(^completeBlock)(CGFloat currentScore);
     return self;
 }
 
--(instancetype)initWithFrame:(CGRect)frame displayRating:(CGFloat)rating {
+- (instancetype)initWithFrame:(CGRect)frame displayRating:(CGFloat)rating {
     if (self = [super initWithFrame:frame]) {
         _numberOfStars = 5;
         _rateStyle = WholeStar;
@@ -62,7 +62,7 @@ typedef void(^completeBlock)(CGFloat currentScore);
     return self;
 }
 
--(instancetype)initWithFrame:(CGRect)frame numberOfStars:(NSInteger)numberOfStars rateStyle:(RateStyle)rateStyle anination:(BOOL)animation delegate:(id)delegate{
+- (instancetype)initWithFrame:(CGRect)frame numberOfStars:(NSInteger)numberOfStars rateStyle:(RateStyle)rateStyle anination:(BOOL)animation delegate:(id)delegate{
     if (self = [super initWithFrame:frame]) {
         _numberOfStars = numberOfStars;
         _rateStyle = rateStyle;
@@ -74,7 +74,7 @@ typedef void(^completeBlock)(CGFloat currentScore);
 }
 
 #pragma mark - block方式
--(instancetype)initWithFrame:(CGRect)frame finish:(finishBlock)finish{
+- (instancetype)initWithFrame:(CGRect)frame finish:(finishBlock)finish{
     if (self = [super initWithFrame:frame]) {
         _numberOfStars = 5;
         _rateStyle = WholeStar;
@@ -86,7 +86,7 @@ typedef void(^completeBlock)(CGFloat currentScore);
     return self;
 }
 
--(instancetype)initWithFrame:(CGRect)frame numberOfStars:(NSInteger)numberOfStars rateStyle:(RateStyle)rateStyle isAnination:(BOOL)isAnimation finish:(finishBlock)finish{
+- (instancetype)initWithFrame:(CGRect)frame numberOfStars:(NSInteger)numberOfStars rateStyle:(RateStyle)rateStyle isAnination:(BOOL)isAnimation finish:(finishBlock)finish{
     if (self = [super initWithFrame:frame]) {
         _numberOfStars = numberOfStars;
         _rateStyle = rateStyle;
@@ -100,7 +100,7 @@ typedef void(^completeBlock)(CGFloat currentScore);
 }
 
 #pragma mark - private Method
--(void)createStarView{
+- (void)createStarView{
     
     self.foregroundStarView = [self createStarViewWithImage:ForegroundStarImage];
     self.backgroundStarView = [self createStarViewWithImage:BackgroundStarImage];
@@ -119,9 +119,7 @@ typedef void(^completeBlock)(CGFloat currentScore);
     UIView *view = [[UIView alloc] initWithFrame:self.bounds];
     view.clipsToBounds = YES;
     view.backgroundColor = [UIColor clearColor];
-    for (NSInteger i = 0; i < self.numberOfStars; i ++)
-    {
-//        UIImage *image = [[NSBundle bundleForClass:[self class]] pathForResource:imageName ofType:@"png"];
+    for (NSInteger i = 0; i < self.numberOfStars; i ++) {
         UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
         imageView.frame = CGRectMake(i * self.bounds.size.width / self.numberOfStars, 0, self.bounds.size.width / self.numberOfStars, self.bounds.size.height);
         imageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -163,7 +161,7 @@ typedef void(^completeBlock)(CGFloat currentScore);
     }];
 }
 
--(void)setCurrentScore:(CGFloat)currentScore {
+- (void)setCurrentScore:(CGFloat)currentScore {
     if (_currentScore == currentScore) {
         return;
     }

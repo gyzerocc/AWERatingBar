@@ -32,16 +32,16 @@ typedef NS_ENUM(NSInteger, RateStyle)
 @property (nonatomic, weak) id<RatingBarDelegate>delegate;
 
 
--(void)displayRating:(CGFloat)rating isIndicator:(BOOL)isIndicator;
--(instancetype)initWithCoder:(NSCoder *)aDecoder;
+- (void)displayRating:(CGFloat)rating isIndicator:(BOOL)isIndicator;
+- (instancetype)initWithCoder:(NSCoder *)aDecoder;
 
 
--(instancetype)initWithFrame:(CGRect)frame;
--(instancetype)initWithFrame:(CGRect)frame displayRating:(CGFloat)rating;
--(instancetype)initWithFrame:(CGRect)frame numberOfStars:(NSInteger)numberOfStars rateStyle:(RateStyle)rateStyle anination:(BOOL)animation delegate:(id)delegate;
+- (instancetype)initWithFrame:(CGRect)frame;
+- (instancetype)initWithFrame:(CGRect)frame displayRating:(CGFloat)rating;
+- (instancetype)initWithFrame:(CGRect)frame numberOfStars:(NSInteger)numberOfStars rateStyle:(RateStyle)rateStyle anination:(BOOL)animation delegate:(id)delegate;
 
 
--(instancetype)initWithFrame:(CGRect)frame finish:(finishBlock)finish;
--(instancetype)initWithFrame:(CGRect)frame numberOfStars:(NSInteger)numberOfStars rateStyle:(RateStyle)rateStyle isAnination:(BOOL)isAnimation finish:(finishBlock)finish;
+- (instancetype)initWithFrame:(CGRect)frame finish:(finishBlock)finish;
+- (instancetype)initWithFrame:(CGRect)frame numberOfStars:(NSInteger)numberOfStars rateStyle:(RateStyle)rateStyle isAnination:(BOOL)isAnimation finish:(finishBlock)finish;
 
 @end
