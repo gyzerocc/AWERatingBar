@@ -3,7 +3,7 @@ an iOS RatingBar
 
 ## Screenshots
 
-<img src="image/1.png" width="25%">
+<img src="image/2.png" width="25%">
 
 ## Requirements
 
