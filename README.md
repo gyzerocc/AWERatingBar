@@ -52,6 +52,11 @@ Include JHUD wherever you need it with `#import "AWERatingBar.h"`.
 -(void)displayRating:(CGFloat)rating isIndicator:(BOOL)isIndicator;
 ```
 
+#### Set Star Image
+```
+- (void)setStarImageWithNormalStar: (UIImage *)normalStar selectedStar: (UIImage *)selectedStar;
+```
+
 ## Contacts
 
 #### If you wish to contact me, email at: 17086448791@163.com
