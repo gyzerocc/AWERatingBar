@@ -101,7 +101,6 @@ typedef void(^completeBlock)(CGFloat currentScore);
 
 #pragma mark - private Method
 - (void)createStarView{
-    
     self.foregroundStarView = [self createStarViewWithImage:ForegroundStarImage];
     self.backgroundStarView = [self createStarViewWithImage:BackgroundStarImage];
     self.foregroundStarView.frame = CGRectMake(0, 0, self.bounds.size.width*_currentScore/self.numberOfStars, self.bounds.size.height);
@@ -112,7 +111,6 @@ typedef void(^completeBlock)(CGFloat currentScore);
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(userTapRateView:)];
     tapGesture.numberOfTapsRequired = 1;
     [self addGestureRecognizer:tapGesture];
-
 }
 
 - (UIView *)createStarViewWithImage:(NSString *)imageName {

@@ -26,9 +26,12 @@ typedef NS_ENUM(NSInteger, RateStyle)
 
 @interface AWERatingBar : UIView
 
-@property (nonatomic,assign)BOOL isAnimation;       //是否动画显示，默认NO
-@property (nonatomic,assign)BOOL isIndicator;       //是否允许修改Rating 默认NO 可以修改
-@property (nonatomic,assign)RateStyle rateStyle;    //评分样式    默认是WholeStar
+@property (nonatomic, assign) BOOL isAnimation;              //是否动画显示，默认NO
+@property (nonatomic, assign) BOOL isIndicator;                //是否允许修改Rating 默认NO 可以修改
+@property (nonatomic, assign) RateStyle rateStyle;             //评分样式    默认是WholeStar
+@property (nonatomic, strong) UIImage *normalStar;           //默认星星图片
+@property (nonatomic, strong) UIImage *selectedStar;         //选中的星星图片
+
 @property (nonatomic, weak) id<RatingBarDelegate>delegate;
 
 
