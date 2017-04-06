@@ -10,10 +10,14 @@
 #import "AWERatingBar.h"
 
 @interface ViewController ()
+{
+    AWERatingBar *ratingBar3;
+}
 
 @property (weak, nonatomic) IBOutlet UILabel *label1;
 @property (weak, nonatomic) IBOutlet UILabel *label2;
 @property (weak, nonatomic) IBOutlet UILabel *label3;
+@property (weak, nonatomic) IBOutlet UILabel *label4;
 
 @end
 
@@ -37,6 +41,11 @@
         weakself.label3.text = [NSString stringWithFormat:@"No.3 star score: %lf", currentScore];
     }];
     [self.view addSubview:ratingBar2];
+    
+    ratingBar3 = [[AWERatingBar alloc] initWithFrame:CGRectMake(8, 192, 150, 30) numberOfStars:5 rateStyle:IncompleteStar isAnination:YES finish:^(CGFloat currentScore) {
+        weakself.label4.text = [NSString stringWithFormat:@"No.4 star score: %lf", currentScore];
+    }];
+    [self.view addSubview:ratingBar3];
 }
 
 
@@ -45,5 +54,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)changeImage:(UIButton *)sender {
+    if (!sender.isSelected) {
+        [ratingBar3 setStarImageWithNormalStar:[UIImage imageNamed:@"star_normal"] selectedStar:[UIImage imageNamed:@"star_selected"]];
+    } else {
+        [ratingBar3 setStarImageWithNormalStar:[UIImage imageNamed:@"b27_icon_star_gray"] selectedStar:[UIImage imageNamed:@"b27_icon_star_yellow"]];
+    }
+    sender.selected = !sender.isSelected;
+}
 
 @end

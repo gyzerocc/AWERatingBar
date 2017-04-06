@@ -39,12 +39,29 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Lh-an-6Dh">
+                                <rect key="frame" x="139" y="574" width="97" height="30"/>
+                                <state key="normal" title="change image"/>
+                                <connections>
+                                    <action selector="changeImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="379-Mj-hgA"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFz-m0-5TX">
+                                <rect key="frame" x="166" y="533" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="9Lh-an-6Dh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EV6-ip-fxE"/>
+                            <constraint firstItem="BFz-m0-5TX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HMC-1s-LZr"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wTd-YT-guB" secondAttribute="bottom" constant="200" id="Nvz-eb-EMq"/>
                             <constraint firstItem="QI6-UN-NpJ" firstAttribute="top" secondItem="2bx-Fl-fFd" secondAttribute="bottom" constant="8" id="Oz6-9Y-Rls"/>
                             <constraint firstItem="QI6-UN-NpJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QxC-sG-fPp"/>
+                            <constraint firstItem="9Lh-an-6Dh" firstAttribute="top" secondItem="BFz-m0-5TX" secondAttribute="bottom" constant="20" id="RN5-WV-qtD"/>
+                            <constraint firstItem="BFz-m0-5TX" firstAttribute="top" secondItem="QI6-UN-NpJ" secondAttribute="bottom" constant="8" id="SXt-4w-VV7"/>
                             <constraint firstItem="wTd-YT-guB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Wa6-fi-B8z"/>
                             <constraint firstItem="2bx-Fl-fFd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YBV-Il-evm"/>
                             <constraint firstItem="2bx-Fl-fFd" firstAttribute="top" secondItem="wTd-YT-guB" secondAttribute="bottom" constant="8" id="nwl-z4-r6K"/>
@@ -54,6 +71,7 @@
                         <outlet property="label1" destination="wTd-YT-guB" id="Ybq-WQ-IcQ"/>
                         <outlet property="label2" destination="2bx-Fl-fFd" id="i9G-Mu-DR5"/>
                         <outlet property="label3" destination="QI6-UN-NpJ" id="3AU-wu-LTy"/>
+                        <outlet property="label4" destination="BFz-m0-5TX" id="gLV-1b-XjM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

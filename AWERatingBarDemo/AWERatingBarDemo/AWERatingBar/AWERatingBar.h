@@ -35,6 +35,20 @@ typedef NS_ENUM(NSInteger, RateStyle)
 @property (nonatomic, weak) id<RatingBarDelegate>delegate;
 
 
+/**
+ 设置星星图片
+
+ @param normalStar 普通状态
+ @param selectedStar 选中状态
+ */
+- (void)setStarImageWithNormalStar: (UIImage *)normalStar selectedStar: (UIImage *)selectedStar;
+
+/**
+ 设置显示的评分
+
+ @param rating 设置评分
+ @param isIndicator 是否可以修改
+ */
 - (void)displayRating:(CGFloat)rating isIndicator:(BOOL)isIndicator;
 - (instancetype)initWithCoder:(NSCoder *)aDecoder;
 

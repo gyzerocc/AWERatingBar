@@ -27,6 +27,17 @@ typedef void(^completeBlock)(CGFloat currentScore);
 
 @implementation AWERatingBar
 
+- (void)setStarImageWithNormalStar:(UIImage *)normalStar selectedStar:(UIImage *)selectedStar {
+    if (normalStar && selectedStar) {
+        [self.foregroundStarView.subviews enumerateObjectsUsingBlock:^(__kindof UIImageView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            obj.image = selectedStar;
+        }];
+        [self.backgroundStarView.subviews enumerateObjectsUsingBlock:^(__kindof UIImageView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            obj.image = normalStar;
+        }];
+    }
+}
+
 - (void)displayRating:(CGFloat)rating isIndicator:(BOOL)isIndicator {
     self.isIndicator = isIndicator;
     self.currentScore = rating;
@@ -101,8 +112,8 @@ typedef void(^completeBlock)(CGFloat currentScore);
 
 #pragma mark - private Method
 - (void)createStarView{
-    self.foregroundStarView = [self createStarViewWithImage:ForegroundStarImage];
-    self.backgroundStarView = [self createStarViewWithImage:BackgroundStarImage];
+    self.foregroundStarView = [self createStarViewWithImage:[UIImage imageNamed:ForegroundStarImage]];
+    self.backgroundStarView = [self createStarViewWithImage:[UIImage imageNamed:BackgroundStarImage]];
     self.foregroundStarView.frame = CGRectMake(0, 0, self.bounds.size.width*_currentScore/self.numberOfStars, self.bounds.size.height);
     
     [self addSubview:self.backgroundStarView];
@@ -113,12 +124,12 @@ typedef void(^completeBlock)(CGFloat currentScore);
     [self addGestureRecognizer:tapGesture];
 }
 
-- (UIView *)createStarViewWithImage:(NSString *)imageName {
+- (UIView *)createStarViewWithImage:(UIImage *)image {
     UIView *view = [[UIView alloc] initWithFrame:self.bounds];
     view.clipsToBounds = YES;
     view.backgroundColor = [UIColor clearColor];
     for (NSInteger i = 0; i < self.numberOfStars; i ++) {
-        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
         imageView.frame = CGRectMake(i * self.bounds.size.width / self.numberOfStars, 0, self.bounds.size.width / self.numberOfStars, self.bounds.size.height);
         imageView.contentMode = UIViewContentModeScaleAspectFit;
         [view addSubview:imageView];
